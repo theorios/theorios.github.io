@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Angular Tutorial </title>
+        <link rel="stylesheet" type="text/css" href="angularFiles/myStyle.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    </head>
+    <body ng-app="weatherApp">
+        <div class="app" ng-controller="MainController">
+            <h1>City: {{ fiveDay.city_name }}</h1>
+            <h2>5-day forecast</h2>
+            <div ng-repeat="day in fiveDay.days">
+                  <p>Date: {{ day.datetime | date }}</p>
+                  <img ng-src="{{ day.icon }}">
+                  <p>Day High: {{ day.high }}&#8457;</p>
+                  <p>Day Low: {{ day.low }}&#8457;</p>
+            </div>
+        </div>
+        <script src="angularFiles/myApp.js"></script>
+        <script src="angularFiles/service.js"></script>  
+        <script src="angularFiles/controller.js"></script>
+    </body>
+</html>
